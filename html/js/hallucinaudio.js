@@ -1,3 +1,19 @@
+//====================//
+//  INIT PLAY BUTTON  //
+//====================//
+function initPlay(){
+  $('#play').click(function(){
+    var src = $('#play').children('img').first().attr('src');
+    if(src == 'img/play.png'){
+      $('#play').children('img').first().attr('src','img/pause.png') 
+    }
+    else{
+      $('#play').children('img').first().attr('src','img/play.png') 
+    }
+  })
+}
+
+
 //==============//
 //  INIT KNOBS  //
 //==============//
@@ -18,4 +34,5 @@ function initKnobs(){
 //===========//
 $(function() {
   initKnobs();
+  initPlay();
 });
