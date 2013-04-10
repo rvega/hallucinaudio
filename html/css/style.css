@@ -1,0 +1,37 @@
+
+body, html{
+  background-color:#222;
+  margin:0px;
+  padding:0px;
+}
+
+p{
+  margin:0px;
+  padding:0px;
+}
+
+.small{
+  width: 50%;
+  float:left;
+}
+
+#container{
+  /* Debug */
+  border:1px solid white;
+  /* iPhone size */
+  height: 460px;
+  width: 320px;
+  text-align: center;
+}
+
+#play{
+  margin:40px 0px 40px 0px;
+}
+
+label{
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  color: #ffec03;
+  font-size: 18px;
+  font-weight: bold;
+  
+}

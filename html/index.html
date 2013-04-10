@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title>Hallucinaudio</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <div id="container">
+      <p id="play">
+        <img src="img/play.png" alt="Play"/>
+        <br><label>Play / Pause</label>
+      </p>
+
+      <p class="small">
+        <input id="gain" type="text" class="knob" value="20" />
+        <br><label>Input Gain</label>
+      </p>
+
+      <p class="small">
+        <input id="tempo" type="text" class="knob" value="110" data-min="20" data-max="200" />
+        <br><label>Tempo</label>
+      </p>
+    </div>
+  </body>
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery.knob.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/hallucinaudio.js" type="text/javascript" charset="utf-8"></script>
+</html>
