@@ -17,7 +17,8 @@ p{
 
 #container{
   /* Debug */
-  border:1px solid white;
+  /* border:1px solid white; */
+  
   /* iPhone size */
   height: 460px;
   width: 320px;

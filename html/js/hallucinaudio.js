@@ -1,8 +1,11 @@
+// Set this to true if you want to debug in a standalone web browser
+DEBUG = false;
+
 //====================//
 //  INIT PLAY BUTTON  //
 //====================//
 function initPlay(){
-  $('#play').click(function(){
+  $('#play').on('click tap', function(e){
     var src = $('#play').children('img').first().attr('src');
     if(src == 'img/play.png'){
       $('#play').children('img').first().attr('src','img/pause.png') 
@@ -10,9 +13,8 @@ function initPlay(){
     else{
       $('#play').children('img').first().attr('src','img/play.png') 
     }
-  })
+  });
 }
-
 
 //==============//
 //  INIT KNOBS  //
@@ -29,10 +31,18 @@ function initKnobs(){
   });
 }
 
-//===========//
-//  ON LOAD  //
-//===========//
-$(function() {
+//========//
+//  MAIN  //
+//========//
+function main(){
   initKnobs();
   initPlay();
-});
+  PureData.initPD();
+};
+
+if(DEBUG){
+  $(document).ready(main);
+}
+else{
+  document.addEventListener('deviceready', main, false);
+}
