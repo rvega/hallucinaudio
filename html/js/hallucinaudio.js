@@ -20,7 +20,7 @@ function initPlay(){
 //  INIT KNOBS  //
 //==============//
 function initKnobs(){
-  $(".knob").knob({
+  var options = {
     'fgColor': '#ffec03',
     'inputColor': '#ffec03',
     'bgColor': '#444444',
@@ -28,7 +28,41 @@ function initKnobs(){
     'angleArc': '250',
     'width': '120',
     'height': '94'
+  };
+
+  
+  var freqOpts = $.extend({'change': function(v){
+      PureData.sendFloat(v, 'frequency');
+  }}, options);
+  $("#frequency").knob( freqOpts );
+
+  var gainOpts = $.extend({'change': function(v){
+      PureData.sendFloat(v/100, 'gain');
+  }}, options);
+  $("#gain").knob( gainOpts );
+}
+
+//===========//
+//  INIT PD  //
+//===========//
+function showAudioError(error){
+  console.log(error); 
+  navigator.notification.alert('I can\'t start audio playback :(', null, 'Oh no!', 'Grrr!');
+}
+
+function initPD(){
+  PureData.configurePlayback(44100, 2, true, false, null, function(error){ 
+    showAudioError(error);
   });
+
+  PureData.openFile('./pd', 'hello.pd', null, function(error){ 
+    showAudioError(error);
+  });
+
+  PureData.setActive(true, null, function(error){ 
+    showAudioError(error);
+  });
+
 }
 
 //========//
@@ -37,7 +71,7 @@ function initKnobs(){
 function main(){
   initKnobs();
   initPlay();
-  PureData.initPD();
+  initPD();
 };
 
 if(DEBUG){

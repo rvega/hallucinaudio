@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <Cordova/CDV.h>
+#import "PdBase.h"
+#import "PdAudioController.h"
 
-@interface PureData : CDVPlugin
+@interface PureData : CDVPlugin <PdReceiverDelegate>
 
-- (void)initPD:(CDVInvokedUrlCommand*)command;
+@property (nonatomic, retain) PdAudioController *audioController;
+
+- (void)configurePlayback:(CDVInvokedUrlCommand*)command;
+- (void)openFile:(CDVInvokedUrlCommand*)command;
 
 @end

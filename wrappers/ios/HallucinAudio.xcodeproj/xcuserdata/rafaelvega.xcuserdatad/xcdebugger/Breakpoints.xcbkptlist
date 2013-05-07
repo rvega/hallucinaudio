@@ -17,16 +17,29 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HallucinAudio/Plugins/PureData.m"
-         timestampString = "389480496.860228"
+         timestampString = "389548202.650496"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "18"
-         endingLineNumber = "18"
-         landmarkName = "-initPd:"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
+         landmarkName = "-sendFloat:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "HallucinAudio/Plugins/PureData.m"
+         timestampString = "389548066.503957"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "119"
+         endingLineNumber = "119"
+         landmarkName = "-setActive:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
