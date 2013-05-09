@@ -22,10 +22,16 @@
 
 // extern void your_external_setup(void);
 // extern void another_external_setup(void);
+extern void z_tilde_setup(void);
+extern void limiter_tilde_setup(void);
+extern void freeverb_tilde_setup(void);
 
 -(void) setupExternals{
   //  your_external_setup();
   //  another_external_setup();
+  z_tilde_setup();
+  limiter_tilde_setup();
+  freeverb_tilde_setup();
 }
 
 
