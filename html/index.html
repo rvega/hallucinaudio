@@ -9,20 +9,29 @@
   </head>
   <body>
     <div id="container">
-      <p id="play">
-        <img src="img/play.png" alt="Play"/>
-        <br><label>Play / Pause</label>
-      </p>
+      <div id="play">
+        <div>
+          <img id="playimg" src="img/pause.png" alt="Play"/>
+          <br><label>Play / Pause</label>
+        </div>
+      </div>
 
-      <p class="small">
-        <input id="frequency" type="text" class="knob" value="220" data-min="20" data-max="5000" />
-        <br><label>Frequency</label>
-      </p>
+      <div class="knobs">
+        <p class="small">
+          <input id="gain" type="text" class="knob" value="30" data-min="0" data-max="100" />
+          <br><label>Mic Gain</label>
+        </p>
 
-      <p class="small">
-        <input id="gain" type="text" class="knob" value="20" data-min="0" data-max="100" />
-        <br><label>Gain</label>
-      </p>
+        <p class="small">
+          <input id="tempo" type="text" class="knob" value="60" data-min="1" data-max="200" />
+          <br><label>Tempo</label>
+        </p>
+
+        <p class="small">
+          <input id="volume" type="text" class="knob" value="10" data-min="0" data-max="100" />
+          <br><label>Volume</label>
+        </p>
+      </div>
     </div>
   </body>
 

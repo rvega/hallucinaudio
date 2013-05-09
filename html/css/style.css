@@ -10,8 +10,13 @@ p{
   padding:0px;
 }
 
+.knobs{
+  width: 670px;
+  margin: 70px 0 0 50px;
+}
+
 .small{
-  width: 50%;
+  width: 33%;
   float:left;
 }
 
@@ -19,14 +24,17 @@ p{
   /* Debug */
   /* border:1px solid white; */
   
-  /* iPhone size */
-  height: 460px;
-  width: 320px;
+  /* iPad size */
+  padding-top: 280px;
+  width: 982px;
+  height: 1788px;
   text-align: center;
 }
 
-#play{
-  margin:40px 0px 40px 0px;
+#play div{
+  /* margin:40px 0px 00px 0px; */
+  margin-left:310px;
+  width:200px;
 }
 
 label{

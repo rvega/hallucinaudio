@@ -6,12 +6,14 @@ DEBUG = false;
 //====================//
 function initPlay(){
   $('#play').on('click tap', function(e){
-    var src = $('#play').children('img').first().attr('src');
+    var src = $('#playimg').attr('src');
     if(src == 'img/play.png'){
-      $('#play').children('img').first().attr('src','img/pause.png') 
+      PureData.sendFloat('1', 'play');
+      $('#playimg').attr('src','img/pause.png') 
     }
     else{
-      $('#play').children('img').first().attr('src','img/play.png') 
+      PureData.sendFloat('0', 'play');
+      $('#playimg').attr('src','img/play.png') 
     }
   });
 }
@@ -26,20 +28,30 @@ function initKnobs(){
     'bgColor': '#444444',
     'angleOffset': '-125',
     'angleArc': '250',
-    'width': '120',
-    'height': '94'
+    'width': '170',
+    'height': '133'
   };
 
   
-  var freqOpts = $.extend({'change': function(v){
-      PureData.sendFloat(v, 'frequency');
-  }}, options);
-  $("#frequency").knob( freqOpts );
+  var opts2;
 
-  var gainOpts = $.extend({'change': function(v){
-      PureData.sendFloat(v/100, 'gain');
+  // TEMPO
+  opts2 = $.extend({'change': function(v){
+      PureData.sendFloat(v, 'tempo');
   }}, options);
-  $("#gain").knob( gainOpts );
+  $("#tempo").knob( opts2 );
+
+  // GAIN
+  opts2 = $.extend({'change': function(v){
+      PureData.sendFloat(v/10, 'mic-gain');
+  }}, options);
+  $("#gain").knob( opts2 );
+  
+  // VOLUME
+  opts2 = $.extend({'change': function(v){
+      PureData.sendFloat(v/10, 'volume');
+  }}, options);
+  $("#volume").knob( opts2 );
 }
 
 //===========//
@@ -69,6 +81,9 @@ function initPD(){
 //  MAIN  //
 //========//
 function main(){
+  //TODO: prevent screen rotation
+  document.addEventListener('orientationchange', function(e) { e.preventDefault(); }, false);
+
   initKnobs();
   initPlay();
   initPD();
