@@ -55,7 +55,7 @@ function initPD(){
     showAudioError(error);
   });
 
-  PureData.openFile('./pd', 'hello.pd', null, function(error){ 
+  PureData.openFile('./pd', 'Hallucinaudio.pd', null, function(error){ 
     showAudioError(error);
   });
 
