@@ -101,9 +101,9 @@
 		1F766FE013BBADB100FB74C0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		300964BA173B35AD00E39BF3 /* z~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "z~.c"; path = "../../../../../../Sinte/repo/vendors/pd-extended-0.43.4/externals/zexy/src/z~.c"; sourceTree = "<group>"; };
-		300964BC173B365800E39BF3 /* limiter~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "limiter~.c"; path = "../../../../../../Sinte/repo/vendors/pd-extended-0.43.4/externals/zexy/src/limiter~.c"; sourceTree = "<group>"; };
-		300964BE173B369E00E39BF3 /* freeverb~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "freeverb~.c"; path = "../../../../../../Sinte/repo/vendors/pd-extended-0.43.4/externals/freeverb~/freeverb~.c"; sourceTree = "<group>"; };
+		300964BA173B35AD00E39BF3 /* z~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "z~.c"; path = "../../vendors/pd-extended-0.43.4/externals/zexy/src/z~.c"; sourceTree = SOURCE_ROOT; };
+		300964BC173B365800E39BF3 /* limiter~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "limiter~.c"; path = "../../vendors/pd-extended-0.43.4/externals/zexy/src/limiter~.c"; sourceTree = SOURCE_ROOT; };
+		300964BE173B369E00E39BF3 /* freeverb~.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "freeverb~.c"; path = "../../vendors/pd-extended-0.43.4/externals/freeverb~/freeverb~.c"; sourceTree = SOURCE_ROOT; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF5B4109A6A2B0062928A /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		301BF5B6109A6A2B0062928A /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -576,7 +576,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "HallucinAudio/HallucinAudio-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -593,7 +593,7 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = HallucinAudio;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "../../vendors/pd-for-ios/libpd/**";
 			};
 			name = Debug;
@@ -603,13 +603,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Victory Productions (HNA23RNX5K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Victory Productions (HNA23RNX5K)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HallucinAudio/HallucinAudio-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "HallucinAudio/HallucinAudio-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -626,7 +628,9 @@
 					"-lstdc++",
 				);
 				PRODUCT_NAME = HallucinAudio;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "A809153D-3440-494D-A42D-19D6ABBE9306";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A809153D-3440-494D-A42D-19D6ABBE9306";
+				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "../../vendors/pd-for-ios/libpd/**";
 			};
 			name = Release;
@@ -679,7 +683,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Victory Productions (HNA23RNX5K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Victory Productions (HNA23RNX5K)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -705,6 +710,8 @@
 					"-all_load",
 					"-Obj-C",
 				);
+				PROVISIONING_PROFILE = "A809153D-3440-494D-A42D-19D6ABBE9306";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A809153D-3440-494D-A42D-19D6ABBE9306";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
